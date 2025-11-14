@@ -34,6 +34,7 @@ build/
 ### Mac OS ###
 .DS_Store
 
+!README.md
 *.md
 *.txt
 .kiro/
