@@ -1,0 +1,102 @@
+/* 继承基础样式 */
+@import "deploy-mode.css";
+
+/* ==================== 步骤区域样式 ==================== */
+.step-section {
+    -fx-background-color: #e8f4f8;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+}
+
+.current-step-label {
+    -fx-text-fill: #2980b9;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.current-step-label:focused {
+    -fx-text-fill: #2980b9;
+}
+
+/* ==================== 进度区域样式 ==================== */
+.progress-section {
+    -fx-padding: 10 0;
+}
+
+.progress-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 13px;
+}
+
+.progress-label:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+.progress-percent {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.progress-percent:focused {
+    -fx-text-fill: #27ae60;
+}
+
+.progress-bar {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 5;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+.progress-bar:indeterminate .bar {
+    -fx-background-color: linear-gradient(to right, #3498db, #2980b9);
+}
+
+/* ==================== 日志区域样式 ==================== */
+.log-section {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.log-text-area {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-family: "Consolas", "Monaco", "Courier New", monospace;
+    -fx-font-size: 11px;
+    -fx-background-radius: 3;
+    -fx-border-color: #34495e;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+}
+
+.log-text-area .content {
+    -fx-background-color: #2c3e50;
+}
+
+.log-text-area .scroll-pane {
+    -fx-background-color: #2c3e50;
+}
+
+.log-text-area .scroll-pane .viewport {
+    -fx-background-color: #2c3e50;
+}
+
+.log-text-area .scroll-bar:vertical {
+    -fx-background-color: #34495e;
+}
+
+.log-text-area .scroll-bar:horizontal {
+    -fx-background-color: #34495e;
+}

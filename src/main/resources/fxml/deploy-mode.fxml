@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.lyq.controller.DeployModeController"
+            stylesheets="@../css/deploy-mode.css"
+            styleClass="root-container"
+            prefWidth="780" prefHeight="600">
+    
+    <!-- 顶部标题区域 -->
+    <top>
+        <VBox spacing="12" alignment="CENTER" styleClass="header-section">
+            <padding>
+                <Insets top="20" right="30" bottom="15" left="30"/>
+            </padding>
+            
+            <Label text="Hadoop 分布式集群一键部署系统" styleClass="title-label" focusTraversable="false">
+                <font>
+                    <Font name="System Bold" size="20"/>
+                </font>
+            </Label>
+            
+            <Label text="部署模式选择" styleClass="subtitle-label" focusTraversable="false">
+                <font>
+                    <Font name="System Bold" size="15"/>
+                </font>
+            </Label>
+            
+            <Separator prefWidth="720"/>
+        </VBox>
+    </top>
+    
+    <!-- 中间内容区域 -->
+    <center>
+        <VBox spacing="15" styleClass="content-section">
+            <padding>
+                <Insets top="20" right="30" bottom="15" left="30"/>
+            </padding>
+            
+            <!-- 一键部署模式 -->
+            <VBox spacing="10" styleClass="mode-card">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <RadioButton fx:id="quickModeRadio" text="一键部署（推荐）" 
+                                styleClass="mode-radio" selected="true" focusTraversable="false">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                        <toggleGroup>
+                            <ToggleGroup fx:id="deployModeGroup"/>
+                        </toggleGroup>
+                    </RadioButton>
+                </HBox>
+                
+                <Label text="系统自动分配节点角色，快速完成部署" 
+                       styleClass="mode-description" focusTraversable="false"/>
+                
+                <!-- 一键部署角色说明 -->
+                <VBox fx:id="quickModeDetails" spacing="8" styleClass="role-details">
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="role-row">
+                        <Label text="虚拟机1:" styleClass="vm-label" minWidth="70" focusTraversable="false"/>
+                        <Label text="NameNode + DataNode + NodeManager" styleClass="role-label" focusTraversable="false"/>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="role-row">
+                        <Label text="虚拟机2:" styleClass="vm-label" minWidth="70" focusTraversable="false"/>
+                        <Label text="ResourceManager + DataNode + NodeManager" styleClass="role-label" focusTraversable="false"/>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="role-row">
+                        <Label text="虚拟机3:" styleClass="vm-label" minWidth="70" focusTraversable="false"/>
+                        <Label text="SecondaryNameNode + DataNode + NodeManager" styleClass="role-label" focusTraversable="false"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+            
+            <!-- 自定义部署模式 -->
+            <VBox spacing="10" styleClass="mode-card">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <RadioButton fx:id="customModeRadio" text="自定义部署" 
+                                styleClass="mode-radio" toggleGroup="$deployModeGroup" focusTraversable="false">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </RadioButton>
+                </HBox>
+                
+                <Label text="手动配置每台虚拟机的角色，灵活满足不同需求" 
+                       styleClass="mode-description" focusTraversable="false"/>
+                
+                <!-- 自定义部署角色配置 -->
+                <VBox fx:id="customModeDetails" spacing="10" styleClass="role-config" 
+                      visible="false" managed="false">
+                    
+                    <!-- 虚拟机1角色配置 -->
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="config-row">
+                        <Label text="虚拟机1:" styleClass="vm-label" minWidth="70" focusTraversable="false"/>
+                        <CheckBox fx:id="vm1NameNodeCheck" text="NameNode" styleClass="role-checkbox"/>
+                        <CheckBox fx:id="vm1ResourceManagerCheck" text="ResourceManager" styleClass="role-checkbox"/>
+                        <CheckBox fx:id="vm1SecondaryNameNodeCheck" text="SecondaryNameNode" styleClass="role-checkbox"/>
+                    </HBox>
+                    
+                    <!-- 虚拟机2角色配置 -->
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="config-row">
+                        <Label text="虚拟机2:" styleClass="vm-label" minWidth="70" focusTraversable="false"/>
+                        <CheckBox fx:id="vm2NameNodeCheck" text="NameNode" styleClass="role-checkbox"/>
+                        <CheckBox fx:id="vm2ResourceManagerCheck" text="ResourceManager" styleClass="role-checkbox"/>
+                        <CheckBox fx:id="vm2SecondaryNameNodeCheck" text="SecondaryNameNode" styleClass="role-checkbox"/>
+                    </HBox>
+                    
+                    <!-- 虚拟机3角色配置 -->
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="config-row">
+                        <Label text="虚拟机3:" styleClass="vm-label" minWidth="70" focusTraversable="false"/>
+                        <CheckBox fx:id="vm3NameNodeCheck" text="NameNode" styleClass="role-checkbox"/>
+                        <CheckBox fx:id="vm3ResourceManagerCheck" text="ResourceManager" styleClass="role-checkbox"/>
+                        <CheckBox fx:id="vm3SecondaryNameNodeCheck" text="SecondaryNameNode" styleClass="role-checkbox"/>
+                    </HBox>
+                    
+                    <Label fx:id="validationErrorLabel" text="" styleClass="error-label" 
+                           visible="false" managed="false" focusTraversable="false"/>
+                </VBox>
+            </VBox>
+            
+        </VBox>
+    </center>
+    
+    <!-- 底部按钮区域 -->
+    <bottom>
+        <VBox spacing="12" alignment="CENTER" styleClass="footer-section">
+            <padding>
+                <Insets top="12" right="30" bottom="20" left="30"/>
+            </padding>
+            
+            <Separator prefWidth="720"/>
+            
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="previousBtn" text="上一步" 
+                        onAction="#handlePrevious" 
+                        styleClass="secondary-btn" prefWidth="130" prefHeight="36">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+                
+                <Button fx:id="cancelBtn" text="取消" 
+                        onAction="#handleCancel" 
+                        styleClass="secondary-btn" prefWidth="130" prefHeight="36">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+                
+                <Button fx:id="nextBtn" text="下一步" 
+                        onAction="#handleNext" 
+                        styleClass="primary-btn" prefWidth="130" prefHeight="36">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+            </HBox>
+        </VBox>
+    </bottom>
+    
+</BorderPane>

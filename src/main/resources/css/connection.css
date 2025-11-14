@@ -1,0 +1,315 @@
+/* ==================== 根容器样式 ==================== */
+.root-container {
+    -fx-background-color: #f5f5f5;
+}
+
+/* ==================== 头部区域样式 ==================== */
+.header-section {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 2, 0, 0, 1);
+}
+
+/* ==================== 内容区域样式 ==================== */
+.content-section {
+    -fx-background-color: white;
+}
+
+/* ==================== 底部区域样式 ==================== */
+.footer-section {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 2, 0, 0, -1);
+}
+
+/* ==================== 标题样式 ==================== */
+.title-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.title-label:focused {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.subtitle-label {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.subtitle-label:focused {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+/* ==================== 虚拟机行样式 ==================== */
+.vm-row {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 5;
+    -fx-padding: 10 15;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-min-width: 720;
+    -fx-max-width: 720;
+    -fx-pref-width: 720;
+    -fx-min-height: 44;
+    -fx-max-height: 44;
+    -fx-pref-height: 44;
+}
+
+/* 移除聚焦时的效果，防止浮动 */
+.vm-row:focused-within {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+    -fx-min-width: 720;
+    -fx-max-width: 720;
+    -fx-pref-width: 720;
+    -fx-min-height: 44;
+    -fx-max-height: 44;
+    -fx-pref-height: 44;
+}
+
+.vm-label {
+    -fx-text-fill: #495057;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.vm-label:focused {
+    -fx-text-fill: #495057;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+/* ==================== 字段标签样式 ==================== */
+.field-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+}
+
+.field-label:focused {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+}
+
+/* ==================== 输入框样式 ==================== */
+.input-field, .ip-field {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 5 8;
+    -fx-font-size: 12px;
+}
+
+/* 输入框聚焦状态 - 只改变边框颜色，不添加阴影效果 */
+.input-field:focused, .ip-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 1.5;
+    -fx-background-color: #ffffff;
+}
+
+/* 输入框错误状态 */
+.input-field.error, .ip-field.error, .error-field {
+    -fx-border-color: #e74c3c;
+    -fx-border-width: 1.5;
+    -fx-background-color: #fff5f5;
+}
+
+.input-field.error:focused, .ip-field.error:focused, .error-field:focused {
+    -fx-border-color: #c0392b;
+}
+
+/* ==================== 状态标签样式 ==================== */
+.status-label {
+    -fx-font-size: 11px;
+    -fx-padding: 4 8;
+    -fx-background-radius: 3;
+    -fx-text-fill: #7f8c8d;
+    -fx-background-color: #ecf0f1;
+    -fx-alignment: center;
+}
+
+.status-label:focused {
+    -fx-font-size: 11px;
+}
+
+/* 成功状态 - 绿色 */
+.status-label.success, .status-success {
+    -fx-text-fill: white;
+    -fx-background-color: #27ae60;
+    -fx-font-weight: bold;
+}
+
+/* 失败状态 - 红色 */
+.status-label.failure, .status-error {
+    -fx-text-fill: white;
+    -fx-background-color: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+/* 测试中状态 - 蓝色 */
+.status-label.testing, .status-testing {
+    -fx-text-fill: white;
+    -fx-background-color: #3498db;
+    -fx-font-weight: bold;
+}
+
+/* ==================== 错误提示样式 ==================== */
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 11px;
+    -fx-font-style: italic;
+    -fx-padding: 2 0 0 0;
+}
+
+.error-label:focused {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 11px;
+}
+
+/* ==================== 按钮样式 ==================== */
+.primary-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #2980b9;
+}
+
+.primary-btn:pressed {
+    -fx-background-color: #21618c;
+}
+
+.primary-btn:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+    -fx-opacity: 0.6;
+    -fx-cursor: default;
+}
+
+/* 切换按钮样式 */
+.toggle-btn {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+    -fx-padding: 4 8;
+}
+
+.toggle-btn:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.toggle-btn:pressed {
+    -fx-background-color: #5d6d7e;
+}
+
+/* 测试按钮样式 - 默认蓝色 */
+.test-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+    -fx-padding: 5 10;
+}
+
+.test-btn:hover {
+    -fx-background-color: #2980b9;
+}
+
+.test-btn:pressed {
+    -fx-background-color: #21618c;
+}
+
+.test-btn:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+    -fx-opacity: 0.6;
+    -fx-cursor: default;
+}
+
+/* 测试按钮 - 测试中状态（蓝色，保持默认色，即使禁用也保持样式） */
+.test-btn.testing {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-opacity: 1.0;
+}
+
+.test-btn.testing:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* 测试按钮 - 成功状态（绿色） */
+.test-btn.success {
+    -fx-background-color: #27ae60;
+}
+
+.test-btn.success:hover {
+    -fx-background-color: #229954;
+}
+
+/* 测试按钮 - 失败状态（红色） */
+.test-btn.failure {
+    -fx-background-color: #e74c3c;
+}
+
+.test-btn.failure:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* ==================== 分隔线样式 ==================== */
+.separator {
+    -fx-background-color: #dee2e6;
+}
+
+/* ==================== 提示区域样式 ==================== */
+.hint-section {
+    -fx-background-color: #e8f4f8;
+    -fx-background-radius: 4;
+    -fx-padding: 10 15;
+    -fx-border-color: #3498db;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-min-width: 720;
+    -fx-max-width: 720;
+    -fx-pref-width: 720;
+}
+
+.hint-title {
+    -fx-text-fill: #2980b9;
+    -fx-font-size: 12px;
+}
+
+.hint-title:focused {
+    -fx-text-fill: #2980b9;
+    -fx-font-size: 12px;
+}
+
+.hint-text {
+    -fx-text-fill: #34495e;
+    -fx-font-size: 11px;
+}
+
+.hint-text:focused {
+    -fx-text-fill: #34495e;
+    -fx-font-size: 11px;
+}
+
+/* ==================== 加载动画样式 ==================== */
+.progress-indicator {
+    -fx-progress-color: #3498db;
+}

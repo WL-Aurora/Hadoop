@@ -1,0 +1,275 @@
+/* ==================== 根容器样式 ==================== */
+.root-container {
+    -fx-background-color: #f5f5f5;
+}
+
+/* ==================== 头部区域样式 ==================== */
+.header-section {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 2, 0, 0, 1);
+}
+
+/* ==================== 内容区域样式 ==================== */
+.content-section {
+    -fx-background-color: white;
+}
+
+/* ==================== 底部区域样式 ==================== */
+.footer-section {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 2, 0, 0, -1);
+}
+
+/* ==================== 标题样式 ==================== */
+.title-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.title-label:focused {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.subtitle-label {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.subtitle-label:focused {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+/* ==================== 模式卡片样式 ==================== */
+.mode-card {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-min-width: 720;
+    -fx-max-width: 720;
+    -fx-pref-width: 720;
+}
+
+.mode-card:hover {
+    -fx-border-color: #3498db;
+}
+
+/* ==================== 单选按钮样式 ==================== */
+.mode-radio {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.mode-radio:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+.mode-radio .radio {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+}
+
+.mode-radio:selected .radio {
+    -fx-background-color: #3498db;
+}
+
+/* ==================== 模式描述样式 ==================== */
+.mode-description {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 0 30;
+}
+
+.mode-description:focused {
+    -fx-text-fill: #7f8c8d;
+}
+
+/* ==================== 角色详情样式 ==================== */
+.role-details {
+    -fx-background-color: #e8f4f8;
+    -fx-background-radius: 3;
+    -fx-padding: 10;
+    -fx-border-color: #3498db;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+}
+
+.role-row {
+    -fx-padding: 2;
+}
+
+.vm-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.vm-label:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+.role-label {
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.role-label:focused {
+    -fx-text-fill: #27ae60;
+}
+
+/* ==================== 角色配置样式 ==================== */
+.role-config {
+    -fx-background-color: #fff9e6;
+    -fx-background-radius: 3;
+    -fx-padding: 10;
+    -fx-border-color: #f39c12;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+}
+
+.config-row {
+    -fx-padding: 5;
+}
+
+.role-checkbox {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+}
+
+.role-checkbox:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+.role-checkbox .box {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+    -fx-border-radius: 3;
+}
+
+.role-checkbox:selected .box {
+    -fx-background-color: #3498db;
+}
+
+.role-checkbox:selected .mark {
+    -fx-background-color: white;
+}
+
+.required-role-label {
+    -fx-text-fill: #e67e22;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+
+.required-role-label:focused {
+    -fx-text-fill: #e67e22;
+}
+
+/* ==================== 错误提示样式 ==================== */
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 0 0;
+}
+
+.error-label:focused {
+    -fx-text-fill: #e74c3c;
+}
+
+/* ==================== 分隔线样式 ==================== */
+.separator {
+    -fx-background-color: #dee2e6;
+}
+
+/* ==================== 提示区域样式 ==================== */
+.hint-section {
+    -fx-background-color: #e8f4f8;
+    -fx-background-radius: 4;
+    -fx-padding: 10 15;
+    -fx-border-color: #3498db;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-min-width: 720;
+    -fx-max-width: 720;
+    -fx-pref-width: 720;
+}
+
+.hint-title {
+    -fx-text-fill: #2980b9;
+    -fx-font-size: 12px;
+}
+
+.hint-title:focused {
+    -fx-text-fill: #2980b9;
+}
+
+.hint-text {
+    -fx-text-fill: #34495e;
+    -fx-font-size: 11px;
+}
+
+.hint-text:focused {
+    -fx-text-fill: #34495e;
+}
+
+/* ==================== 按钮样式 ==================== */
+.primary-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #2980b9;
+}
+
+.primary-btn:pressed {
+    -fx-background-color: #21618c;
+}
+
+.primary-btn:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+    -fx-opacity: 0.6;
+    -fx-cursor: default;
+}
+
+.secondary-btn {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.secondary-btn:pressed {
+    -fx-background-color: #5d6d7e;
+}
+
+.secondary-btn:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+    -fx-opacity: 0.6;
+    -fx-cursor: default;
+}

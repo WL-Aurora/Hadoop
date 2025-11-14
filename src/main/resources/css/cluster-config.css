@@ -1,0 +1,177 @@
+/* 继承deploy-mode.css的基础样式 */
+@import "deploy-mode.css";
+
+/* ==================== 滚动面板样式 ==================== */
+.scroll-pane {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: white;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #f5f5f5;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #f5f5f5;
+}
+
+/* ==================== 配置区域样式 ==================== */
+.config-section {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.section-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.section-title:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+/* ==================== 配置网格样式 ==================== */
+.config-grid {
+    -fx-padding: 10;
+}
+
+.config-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 13px;
+}
+
+.config-label:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+/* ==================== 输入框样式 ==================== */
+.input-field {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 5 8;
+    -fx-font-size: 12px;
+}
+
+.input-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 1.5;
+}
+
+.readonly-field {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 5 8;
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* ==================== 下拉框样式 ==================== */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+.combo-box:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 1.5;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #2c3e50;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #e8f4f8;
+}
+
+/* ==================== 子标题样式 ==================== */
+.subsection-title {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.subsection-title:focused {
+    -fx-text-fill: #34495e;
+}
+
+/* ==================== 单选按钮样式 ==================== */
+.config-radio {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+}
+
+.config-radio:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+.config-radio .radio {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+}
+
+.config-radio:selected .radio {
+    -fx-background-color: #3498db;
+}
+
+/* ==================== 文件路径输入框样式 ==================== */
+.file-path-field {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 5 8;
+    -fx-font-size: 11px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.file-path-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 1.5;
+}
+
+/* ==================== 浏览按钮样式 ==================== */
+.browse-btn {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+}
+
+.browse-btn:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.browse-btn:pressed {
+    -fx-background-color: #5d6d7e;
+}
+
+.browse-btn:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #95a5a6;
+    -fx-opacity: 0.6;
+    -fx-cursor: default;
+}

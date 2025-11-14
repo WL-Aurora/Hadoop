@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.lyq.controller.ClusterManagementController"
+            stylesheets="@../css/cluster-management.css"
+            styleClass="root-container"
+            prefWidth="780" prefHeight="600">
+    
+    <!-- 顶部标题区域 -->
+    <top>
+        <VBox spacing="12" alignment="CENTER" styleClass="header-section">
+            <padding>
+                <Insets top="20" right="30" bottom="15" left="30"/>
+            </padding>
+            
+            <Label text="Hadoop 分布式集群一键部署系统" styleClass="title-label" focusTraversable="false">
+                <font>
+                    <Font name="System Bold" size="20"/>
+                </font>
+            </Label>
+            
+            <Label text="集群管理" styleClass="subtitle-label" focusTraversable="false">
+                <font>
+                    <Font name="System Bold" size="15"/>
+                </font>
+            </Label>
+            
+            <Separator prefWidth="720"/>
+        </VBox>
+    </top>
+    
+    <!-- 中间内容区域 -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="15" styleClass="content-section">
+                <padding>
+                    <Insets top="20" right="30" bottom="15" left="30"/>
+                </padding>
+                
+                <!-- 集群状态概览 -->
+                <VBox spacing="10" styleClass="status-section">
+                    <Label text="集群状态" styleClass="section-title" focusTraversable="false">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    
+                    <GridPane hgap="15" vgap="10" styleClass="status-grid">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="33"/>
+                            <ColumnConstraints percentWidth="33"/>
+                            <ColumnConstraints percentWidth="33"/>
+                        </columnConstraints>
+                        
+                        <!-- 虚拟机1状态 -->
+                        <VBox spacing="5" styleClass="node-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <Label text="虚拟机1 (hadoop101)" styleClass="node-title" focusTraversable="false">
+                                <font>
+                                    <Font name="System Bold" size="13"/>
+                                </font>
+                            </Label>
+                            <Label text="IP: 192.168.10.101" styleClass="node-info" focusTraversable="false"/>
+                            <Label text="角色: NameNode, DataNode" styleClass="node-info" focusTraversable="false"/>
+                            <Label fx:id="vm1StatusLabel" text="状态: 运行中" styleClass="status-running" focusTraversable="false">
+                                <font>
+                                    <Font name="System Bold" size="12"/>
+                                </font>
+                            </Label>
+                        </VBox>
+                        
+                        <!-- 虚拟机2状态 -->
+                        <VBox spacing="5" styleClass="node-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <Label text="虚拟机2 (hadoop102)" styleClass="node-title" focusTraversable="false">
+                                <font>
+                                    <Font name="System Bold" size="13"/>
+                                </font>
+                            </Label>
+                            <Label text="IP: 192.168.10.102" styleClass="node-info" focusTraversable="false"/>
+                            <Label text="角色: ResourceManager, DataNode" styleClass="node-info" focusTraversable="false"/>
+                            <Label fx:id="vm2StatusLabel" text="状态: 运行中" styleClass="status-running" focusTraversable="false">
+                                <font>
+                                    <Font name="System Bold" size="12"/>
+                                </font>
+                            </Label>
+                        </VBox>
+                        
+                        <!-- 虚拟机3状态 -->
+                        <VBox spacing="5" styleClass="node-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                            <Label text="虚拟机3 (hadoop103)" styleClass="node-title" focusTraversable="false">
+                                <font>
+                                    <Font name="System Bold" size="13"/>
+                                </font>
+                            </Label>
+                            <Label text="IP: 192.168.10.103" styleClass="node-info" focusTraversable="false"/>
+                            <Label text="角色: SecondaryNameNode, DataNode" styleClass="node-info" focusTraversable="false"/>
+                            <Label fx:id="vm3StatusLabel" text="状态: 运行中" styleClass="status-running" focusTraversable="false">
+                                <font>
+                                    <Font name="System Bold" size="12"/>
+                                </font>
+                            </Label>
+                        </VBox>
+                    </GridPane>
+                </VBox>
+                
+                <Separator prefWidth="720"/>
+                
+                <!-- 集群操作 -->
+                <VBox spacing="10" styleClass="operation-section">
+                    <Label text="集群操作" styleClass="section-title" focusTraversable="false">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button text="启动集群" onAction="#handleStartCluster" 
+                               styleClass="operation-btn" prefWidth="120" prefHeight="32">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Button>
+                        
+                        <Button text="停止集群" onAction="#handleStopCluster" 
+                               styleClass="operation-btn" prefWidth="120" prefHeight="32">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Button>
+                        
+                        <Button text="重启集群" onAction="#handleRestartCluster" 
+                               styleClass="operation-btn" prefWidth="120" prefHeight="32">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Button>
+                        
+                        <Button text="查看状态" onAction="#handleCheckStatus" 
+                               styleClass="operation-btn" prefWidth="120" prefHeight="32">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Button>
+                    </HBox>
+                </VBox>
+                
+                <Separator prefWidth="720"/>
+                
+                <!-- WebUI访问 -->
+                <VBox spacing="10" styleClass="webui-section">
+                    <Label text="WebUI 访问" styleClass="section-title" focusTraversable="false">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    
+                    <GridPane hgap="10" vgap="10" styleClass="webui-grid">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="150" prefWidth="150"/>
+                            <ColumnConstraints minWidth="300" prefWidth="400"/>
+                            <ColumnConstraints minWidth="100" prefWidth="100"/>
+                        </columnConstraints>
+                        
+                        <Label text="NameNode:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                               styleClass="webui-label" focusTraversable="false"/>
+                        <TextField text="http://192.168.10.101:9870" editable="false" 
+                                  GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                  styleClass="webui-field"/>
+                        <Button text="打开" onAction="#handleOpenNameNode" 
+                               GridPane.columnIndex="2" GridPane.rowIndex="0"
+                               styleClass="webui-btn" prefWidth="80"/>
+                        
+                        <Label text="ResourceManager:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                               styleClass="webui-label" focusTraversable="false"/>
+                        <TextField text="http://192.168.10.102:8088" editable="false" 
+                                  GridPane.columnIndex="1" GridPane.rowIndex="1"
+                                  styleClass="webui-field"/>
+                        <Button text="打开" onAction="#handleOpenResourceManager" 
+                               GridPane.columnIndex="2" GridPane.rowIndex="1"
+                               styleClass="webui-btn" prefWidth="80"/>
+                        
+                        <Label text="历史服务器:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                               styleClass="webui-label" focusTraversable="false"/>
+                        <TextField text="http://192.168.10.101:19888" editable="false" 
+                                  GridPane.columnIndex="1" GridPane.rowIndex="2"
+                                  styleClass="webui-field"/>
+                        <Button text="打开" onAction="#handleOpenHistoryServer" 
+                               GridPane.columnIndex="2" GridPane.rowIndex="2"
+                               styleClass="webui-btn" prefWidth="80"/>
+                    </GridPane>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+    
+    <!-- 底部按钮区域 -->
+    <bottom>
+        <VBox spacing="12" alignment="CENTER" styleClass="footer-section">
+            <padding>
+                <Insets top="12" right="30" bottom="20" left="30"/>
+            </padding>
+            
+            <Separator prefWidth="720"/>
+            
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="退出" onAction="#handleExit" 
+                        styleClass="secondary-btn" prefWidth="130" prefHeight="36">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+            </HBox>
+        </VBox>
+    </bottom>
+    
+</BorderPane>

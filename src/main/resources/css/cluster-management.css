@@ -1,0 +1,149 @@
+/* 继承基础样式 */
+@import "deploy-mode.css";
+
+/* ==================== 滚动面板样式 ==================== */
+.scroll-pane {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+/* ==================== 状态区域样式 ==================== */
+.status-section {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.status-grid {
+    -fx-padding: 10;
+}
+
+.node-card {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-padding: 12;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+}
+
+.node-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.node-title:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+.node-info {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 11px;
+}
+
+.node-info:focused {
+    -fx-text-fill: #7f8c8d;
+}
+
+.status-running {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.status-running:focused {
+    -fx-text-fill: #27ae60;
+}
+
+.status-stopped {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.status-stopped:focused {
+    -fx-text-fill: #e74c3c;
+}
+
+/* ==================== 操作区域样式 ==================== */
+.operation-section {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.operation-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+}
+
+.operation-btn:hover {
+    -fx-background-color: #2980b9;
+}
+
+.operation-btn:pressed {
+    -fx-background-color: #21618c;
+}
+
+/* ==================== WebUI区域样式 ==================== */
+.webui-section {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.webui-grid {
+    -fx-padding: 10;
+}
+
+.webui-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.webui-label:focused {
+    -fx-text-fill: #2c3e50;
+}
+
+.webui-field {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 5 8;
+    -fx-font-size: 11px;
+    -fx-text-fill: #2c3e50;
+}
+
+.webui-btn {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+}
+
+.webui-btn:hover {
+    -fx-background-color: #229954;
+}
+
+.webui-btn:pressed {
+    -fx-background-color: #1e8449;
+}

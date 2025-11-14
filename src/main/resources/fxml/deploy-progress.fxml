@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.lyq.controller.DeployProgressController"
+            stylesheets="@../css/deploy-progress.css"
+            styleClass="root-container"
+            prefWidth="780" prefHeight="600">
+    
+    <!-- 顶部标题区域 -->
+    <top>
+        <VBox spacing="12" alignment="CENTER" styleClass="header-section">
+            <padding>
+                <Insets top="20" right="30" bottom="15" left="30"/>
+            </padding>
+            
+            <Label text="Hadoop 分布式集群一键部署系统" styleClass="title-label" focusTraversable="false">
+                <font>
+                    <Font name="System Bold" size="20"/>
+                </font>
+            </Label>
+            
+            <Label text="部署进度" styleClass="subtitle-label" focusTraversable="false">
+                <font>
+                    <Font name="System Bold" size="15"/>
+                </font>
+            </Label>
+            
+            <Separator prefWidth="720"/>
+        </VBox>
+    </top>
+    
+    <!-- 中间内容区域 -->
+    <center>
+        <VBox spacing="15" styleClass="content-section">
+            <padding>
+                <Insets top="20" right="30" bottom="15" left="30"/>
+            </padding>
+            
+            <!-- 当前步骤显示 -->
+            <VBox spacing="10" styleClass="step-section">
+                <Label text="当前步骤" styleClass="section-title" focusTraversable="false">
+                    <font>
+                        <Font name="System Bold" size="14"/>
+                    </font>
+                </Label>
+                
+                <Label fx:id="currentStepLabel" text="准备开始部署..." 
+                       styleClass="current-step-label" focusTraversable="false">
+                    <font>
+                        <Font name="System Bold" size="16"/>
+                    </font>
+                </Label>
+            </VBox>
+            
+            <!-- 进度条 -->
+            <VBox spacing="10" styleClass="progress-section">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="整体进度:" styleClass="progress-label" focusTraversable="false"/>
+                    <Label fx:id="progressPercentLabel" text="0%" styleClass="progress-percent" focusTraversable="false">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                </HBox>
+                
+                <ProgressBar fx:id="progressBar" prefWidth="720" prefHeight="30" 
+                            progress="0" styleClass="progress-bar"/>
+            </VBox>
+            
+            <!-- 部署日志 -->
+            <VBox spacing="10" styleClass="log-section" VBox.vgrow="ALWAYS">
+                <Label text="部署日志" styleClass="section-title" focusTraversable="false">
+                    <font>
+                        <Font name="System Bold" size="14"/>
+                    </font>
+                </Label>
+                
+                <TextArea fx:id="logTextArea" editable="false" wrapText="true"
+                         styleClass="log-text-area" VBox.vgrow="ALWAYS"
+                         prefHeight="200"/>
+            </VBox>
+        </VBox>
+    </center>
+    
+    <!-- 底部按钮区域 -->
+    <bottom>
+        <VBox spacing="12" alignment="CENTER" styleClass="footer-section">
+            <padding>
+                <Insets top="12" right="30" bottom="20" left="30"/>
+            </padding>
+            
+            <Separator prefWidth="720"/>
+            
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="cancelBtn" text="取消部署" 
+                        onAction="#handleCancel" 
+                        styleClass="secondary-btn" prefWidth="130" prefHeight="36"
+                        visible="true">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+                
+                <Button fx:id="finishBtn" text="完成" 
+                        onAction="#handleFinish" 
+                        styleClass="primary-btn" prefWidth="130" prefHeight="36"
+                        visible="false" disable="true">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+            </HBox>
+        </VBox>
+    </bottom>
+    
+</BorderPane>

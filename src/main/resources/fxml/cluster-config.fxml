@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.lyq.controller.ClusterConfigController"
+            stylesheets="@../css/cluster-config.css"
+            styleClass="root-container"
+            prefWidth="780" prefHeight="600">
+    
+    <!-- 顶部标题区域 -->
+    <top>
+        <VBox spacing="12" alignment="CENTER" styleClass="header-section">
+            <padding>
+                <Insets top="20" right="30" bottom="15" left="30"/>
+            </padding>
+            
+            <Label text="Hadoop 分布式集群一键部署系统" styleClass="title-label" focusTraversable="false">
+                <font>
+                    <Font name="System Bold" size="20"/>
+                </font>
+            </Label>
+            
+            <Label text="集群参数配置" styleClass="subtitle-label" focusTraversable="false">
+                <font>
+                    <Font name="System Bold" size="15"/>
+                </font>
+            </Label>
+            
+            <Separator prefWidth="720"/>
+        </VBox>
+    </top>
+    
+    <!-- 中间内容区域 -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="15" styleClass="content-section">
+                <padding>
+                    <Insets top="20" right="30" bottom="15" left="30"/>
+                </padding>
+                
+                <!-- 网络配置区 -->
+                <VBox spacing="10" styleClass="config-section">
+                    <Label text="网络配置" styleClass="section-title" focusTraversable="false">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    
+                    <GridPane hgap="10" vgap="10" styleClass="config-grid">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="100" prefWidth="100"/>
+                            <ColumnConstraints minWidth="150" prefWidth="200"/>
+                            <ColumnConstraints minWidth="100" prefWidth="100"/>
+                            <ColumnConstraints minWidth="150" prefWidth="200"/>
+                        </columnConstraints>
+                        
+                        <Label text="虚拟机1 IP:" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                               styleClass="config-label" focusTraversable="false"/>
+                        <TextField fx:id="vm1IpField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                  styleClass="readonly-field"/>
+                        
+                        <Label text="主机名:" GridPane.columnIndex="2" GridPane.rowIndex="0"
+                               styleClass="config-label" focusTraversable="false"/>
+                        <TextField fx:id="vm1HostnameField" text="Hadoop101" GridPane.columnIndex="3" GridPane.rowIndex="0"
+                                  styleClass="input-field"/>
+                        
+                        <Label text="虚拟机2 IP:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                               styleClass="config-label" focusTraversable="false"/>
+                        <TextField fx:id="vm2IpField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                                  styleClass="readonly-field"/>
+                        
+                        <Label text="主机名:" GridPane.columnIndex="2" GridPane.rowIndex="1"
+                               styleClass="config-label" focusTraversable="false"/>
+                        <TextField fx:id="vm2HostnameField" text="Hadoop102" GridPane.columnIndex="3" GridPane.rowIndex="1"
+                                  styleClass="input-field"/>
+                        
+                        <Label text="虚拟机3 IP:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                               styleClass="config-label" focusTraversable="false"/>
+                        <TextField fx:id="vm3IpField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                                  styleClass="readonly-field"/>
+                        
+                        <Label text="主机名:" GridPane.columnIndex="2" GridPane.rowIndex="2"
+                               styleClass="config-label" focusTraversable="false"/>
+                        <TextField fx:id="vm3HostnameField" text="Hadoop103" GridPane.columnIndex="3" GridPane.rowIndex="2"
+                                  styleClass="input-field"/>
+                    </GridPane>
+                </VBox>
+                
+                <Separator prefWidth="720"/>
+                
+                <!-- Hadoop组件配置区 -->
+                <VBox spacing="15" styleClass="config-section">
+                    <Label text="Hadoop 组件配置" styleClass="section-title" focusTraversable="false">
+                        <font>
+                            <Font name="System Bold" size="14"/>
+                        </font>
+                    </Label>
+                    
+                    <!-- JDK配置 -->
+                    <VBox spacing="8">
+                        <Label text="JDK 配置" styleClass="subsection-title" focusTraversable="false">
+                            <font>
+                                <Font name="System Bold" size="12"/>
+                            </font>
+                        </Label>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="jdkPresetRadio" text="预设版本:" selected="true" styleClass="config-radio">
+                                <toggleGroup>
+                                    <ToggleGroup fx:id="jdkSourceGroup"/>
+                                </toggleGroup>
+                            </RadioButton>
+                            <ComboBox fx:id="jdkVersionCombo" styleClass="combo-box" prefWidth="180"/>
+                        </HBox>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="jdkUploadRadio" text="本地上传:" toggleGroup="$jdkSourceGroup" styleClass="config-radio"/>
+                            <TextField fx:id="jdkFilePathField" promptText="选择JDK安装包..." editable="false" 
+                                      styleClass="file-path-field" prefWidth="300" disable="true"/>
+                            <Button fx:id="jdkBrowseBtn" text="浏览" onAction="#handleBrowseJdk" 
+                                   styleClass="browse-btn" prefWidth="60" disable="true"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- Hadoop配置 -->
+                    <VBox spacing="8">
+                        <Label text="Hadoop 配置" styleClass="subsection-title" focusTraversable="false">
+                            <font>
+                                <Font name="System Bold" size="12"/>
+                            </font>
+                        </Label>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="hadoopPresetRadio" text="预设版本:" selected="true" styleClass="config-radio">
+                                <toggleGroup>
+                                    <ToggleGroup fx:id="hadoopSourceGroup"/>
+                                </toggleGroup>
+                            </RadioButton>
+                            <ComboBox fx:id="hadoopVersionCombo" styleClass="combo-box" prefWidth="180"/>
+                        </HBox>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="hadoopUploadRadio" text="本地上传:" toggleGroup="$hadoopSourceGroup" styleClass="config-radio"/>
+                            <TextField fx:id="hadoopFilePathField" promptText="选择Hadoop安装包..." editable="false" 
+                                      styleClass="file-path-field" prefWidth="300" disable="true"/>
+                            <Button fx:id="hadoopBrowseBtn" text="浏览" onAction="#handleBrowseHadoop" 
+                                   styleClass="browse-btn" prefWidth="60" disable="true"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- 其他配置 -->
+                    <GridPane hgap="15" vgap="10" styleClass="config-grid">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="100" prefWidth="120"/>
+                            <ColumnConstraints minWidth="150" prefWidth="180"/>
+                            <ColumnConstraints minWidth="100" prefWidth="120"/>
+                            <ColumnConstraints minWidth="150" prefWidth="180"/>
+                        </columnConstraints>
+                        
+                        <Label text="HDFS 块大小:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                               styleClass="config-label" focusTraversable="false"/>
+                        <ComboBox fx:id="hdfsBlockSizeCombo" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                 styleClass="combo-box" prefWidth="180"/>
+                        
+                        <Label text="YARN 总内存:" GridPane.columnIndex="2" GridPane.rowIndex="0"
+                               styleClass="config-label" focusTraversable="false"/>
+                        <ComboBox fx:id="yarnMemoryCombo" GridPane.columnIndex="3" GridPane.rowIndex="0"
+                                 styleClass="combo-box" prefWidth="180"/>
+                    </GridPane>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+    
+    <!-- 底部按钮区域 -->
+    <bottom>
+        <VBox spacing="12" alignment="CENTER" styleClass="footer-section">
+            <padding>
+                <Insets top="12" right="30" bottom="20" left="30"/>
+            </padding>
+            
+            <Separator prefWidth="720"/>
+            
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="previousBtn" text="上一步" 
+                        onAction="#handlePrevious" 
+                        styleClass="secondary-btn" prefWidth="130" prefHeight="36">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+                
+                <Button fx:id="cancelBtn" text="取消" 
+                        onAction="#handleCancel" 
+                        styleClass="secondary-btn" prefWidth="130" prefHeight="36">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+                
+                <Button fx:id="startDeployBtn" text="开始部署" 
+                        onAction="#handleStartDeploy" 
+                        styleClass="primary-btn" prefWidth="130" prefHeight="36">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </Button>
+            </HBox>
+        </VBox>
+    </bottom>
+    
+</BorderPane>
